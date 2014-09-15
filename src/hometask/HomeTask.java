@@ -34,9 +34,10 @@ public class HomeTask {
         //Если введеная позиция ладьи валидна выводим циклом провалидированый массив возможных позиций
         if (Chessboard.validatePosition(currentRookPosition)){
             System.out.println("Rook can move on");
+            StringBuilder[] tempArrayForRookPosition=Rook.rookMove(currentRookPosition);
             for (int i=0;i<=27;i++){
-                if (Chessboard.validatePosition(Rook.rookMove(currentRookPosition)[i]))
-                System.out.print(" " +Rook.rookMove(currentRookPosition)[i]);
+                if (Chessboard.validatePosition(tempArrayForRookPosition[i]))
+                System.out.print(" " +tempArrayForRookPosition[i]);
             }
         // Иначе выводим сообщение о некорректно введеной позиции
         }
@@ -48,9 +49,10 @@ public class HomeTask {
         //Если введеная позиция ферзя валидна выводим циклом провалидированый массив возможных позиций
         if (Chessboard.validatePosition(currentQueenPosition)){
             System.out.println("Queen can move on");
+            StringBuilder[] tempArrayForQueenPosition=Queen.moveQueen(currentQueenPosition);
             for (int i=0;i<=55;i++){
-                if (Chessboard.validatePosition(Queen.moveQueen(currentQueenPosition)[i]))
-                System.out.print(" " +Queen.moveQueen(currentQueenPosition)[i]);
+                if (Chessboard.validatePosition(tempArrayForQueenPosition[i]))
+                System.out.print(" " +tempArrayForQueenPosition[i]);
             }
         }
         // Иначе выводим сообщение о некорректно введеной позиции
@@ -62,9 +64,10 @@ public class HomeTask {
         //Если введеная позиция коня валидна выводим цилом провалидированый массив возможных позиций
         if (Chessboard.validatePosition(currentKnightPosition)){
             System.out.println("Knight can move on");
+            StringBuilder[] tempArrayForKnightPosition=Knight.knightMove(currentKnightPosition);
             for (int i=0;i<=7;i++){
-                if (Chessboard.validatePosition(Knight.knightMove(currentKnightPosition)[i]))
-                System.out.print(" " +Knight.knightMove(currentKnightPosition)[i]);
+                if (Chessboard.validatePosition(tempArrayForKnightPosition[i]))
+                System.out.print(" " +tempArrayForKnightPosition[i]);
             }
             System.out.println();
         }
